@@ -5,9 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    input{
+        width: 50px;
+        height: 40px;
+        border: 1px solid gray;
+        outline-style: none;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    </style>
+    <script>
+    window.onload = function(){
+        
+        setTimeout(function(){
+            document.getElementById('au').play();
+            document.getElementById('au').volume = 0.5;
+        },3000);
+        
+    };
+    
+    </script>
 </head>
 <body>
-     <audio src="./music/realyloveyou.mp3" controls autoplay loop preload="auto"></audio>
-    <bgsound controls src=https://music.163.com/#/song?id=28996030&userid=112129435 loop=-1></bgsound>
+     <audio id="au" src="./music/realyloveyou.mp3" controls autostar=“true” loop=“11” preload="auto"></audio>
 </body>
 </html>
