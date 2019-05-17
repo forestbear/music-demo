@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="./weix.js"></script>
     <style>
     input{
         width: 50px;
@@ -17,8 +18,25 @@
     </style>
     <script>
     window.onload = function(){
+
+        //部分ios微信浏览器默认播放音乐
+   function autoPlayAudio() {
+       wx.config({
+           // 配置信息, 即使不正确也能使用 wx.ready
+           debug: false,
+           appId: '',
+           timestamp: 1,
+           nonceStr: '',
+           signature: '',
+           jsApiList: []
+       });
+       wx.ready(function() {
+           document.getElementById('au').play();
+       });
+   }
         
         setTimeout(function(){
+            autoPlayAudio();
             document.getElementById('au').play();
             document.getElementById('au').volume = 0.5;
         },3000);
