@@ -15,6 +15,25 @@
         cursor: pointer;
         border-radius: 10px;
     }
+    #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        float: left;
+        position: relative;
+        top: 150px;
+        left: 150px;
+        transition: 0.7s;
+        transform-origin: center;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 100px;
+        color: white;
+        font-size: 50px;
+    }
+    #box:hover{
+        transform: rotate(7deg);
+    }
     </style>
     <script>
     window.onload = function(){
@@ -35,10 +54,21 @@
        });
    }
         
+        function bgAutoRo(){
+            var num =0;
+            setInterval(function(){
+                num++;
+                console.log(num);
+                document.getElementById('box').style.transform = "rotate( "+num+"deg)"; 
+            },30);
+        };
+
         setTimeout(function(){
             autoPlayAudio();
+            
             document.getElementById('au').play();
             document.getElementById('au').volume = 0.5;
+            bgAutoRo();
         },3000);
         
     };
@@ -46,6 +76,7 @@
     </script>
 </head>
 <body>
-     <audio id="au" src="./music/realyloveyou.mp3" controls autostar=“true” loop=“11” preload="auto"></audio>
+     <div id="box">title</div>
+    <audio id="au" src="./music/realyloveyou.mp3" controls autostar=“true” loop=“11” preload="auto"></audio>
 </body>
 </html>
