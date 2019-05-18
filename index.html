@@ -23,17 +23,30 @@
         position: relative;
         top: 150px;
         left: 150px;
-        transition: 0.7s;
+        transition: .7s;
         transform-origin: center;
+        transform: rotate(0deg);
         border-radius: 50%;
         text-align: center;
         line-height: 100px;
         color: white;
         font-size: 50px;
+        /* -webkit-animation: move 10s infinite linear; */
     }
-    #box:hover{
-        transform: rotate(7deg);
+    @keyframes move
+    {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            }
+        
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+            }
     }
+
+
     </style>
     <script>
     window.onload = function(){
@@ -59,7 +72,7 @@
             setInterval(function(){
                 num++;
                 console.log(num);
-                document.getElementById('box').style.transform = "rotate( "+num+"deg)"; 
+                document.getElementById('box').style.animation = "move 10s infinite linear"; 
             },30);
         };
 
